@@ -24,7 +24,6 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD menu.xml /etc/xdg/openbox/menu.xml
 ADD spotlite /usr/bin/spotlite
 RUN chown spotlite:spotlite /usr/bin/spotlite*
-ADD winetricks /home/spotlite/winetricks
 RUN chown -R spotlite:spotlite /home/spotlite
 ENV WINEPREFIX /home/spotlite/.wine
 ENV WINEARCH win32
