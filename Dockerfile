@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Daniel Guerra
 RUN dpkg --add-architecture i386
 RUN apt-get -yy update
-RUN apt-get -y install --no-install-recommends wget libx11-6 libx11-xcb1 libfontconfig1 supervisor xvfb x11vnc software-properties-common openbox xterm unzip
+RUN apt-get -y install --no-install-recommends wget libx11-6 libx11-xcb1 libfontconfig1 supervisor xvfb x11vnc software-properties-common openbox xterm unzip chromium-browser
 RUN add-apt-repository ppa:wine/wine-builds
 RUN apt-get -yy update
 RUN apt-get -y install winehq-devel
@@ -28,5 +28,9 @@ RUN chown -R spotlite:spotlite /home/spotlite
 ENV WINEPREFIX /home/spotlite/.wine
 ENV WINEARCH win32
 ENV DISPLAY :1
+USER spotlite
+ADD winebrowser.reg /home/spotlite/winebrowser.reg
+RUN wine regedit /home/spotlite/winebrowser.reg
+USER root
 ADD start /bin/start
 CMD ["/bin/start"]
