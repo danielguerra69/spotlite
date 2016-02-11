@@ -1,4 +1,4 @@
 #! /bin/bash
 export TERM=xterm
 export DISPLAY=":1"
-wine /home/spotlite/Spotlite.exe
+/usr/bin/SpotLite
