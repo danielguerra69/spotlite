@@ -14,13 +14,13 @@
   <item label="Start Spotlite">
     <action name="Execute"><command>spotlite</command></action>
   </item>
+  <item label="Web Browser">
+    <action name="Execute"><command>firefox</command></action>
+  </item>
   <item label="xterm">
     <action name="Execute"><execute>xterm</execute></action>
   </item>
   <separator />
-  <item label="Exit">
-    <action name="Exit" />
-  </item>
 </menu>
 
 </openbox_menu>
